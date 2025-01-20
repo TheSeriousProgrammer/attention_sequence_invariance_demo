@@ -102,14 +102,14 @@ const AttentionVisualizer = () => {
         {/* Current Sequence Order */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-center">Current Token Order</h3>
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-4 flex-row">
             {reorderedTokens.map((token, idx) => (
               <div key={idx} className="w-12 h-12 flex items-center justify-center border rounded-lg bg-blue-50">
                 {token}({values[token]})
               </div>
             ))}
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-4">
             <button
               onClick={shuffleSequence}
               className="flex items-center px-5 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:ring focus:ring-blue-200 justify-center"
