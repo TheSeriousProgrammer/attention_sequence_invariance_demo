@@ -114,7 +114,6 @@ const AttentionVisualizer = () => {
               onClick={shuffleSequence}
               className="flex items-center px-5 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:ring focus:ring-blue-200 justify-center"
             >
-              <Shuffle className="w-4 h-4 mr-2" />
               <span className="align-middle">Shuffle Order</span>
             </button>
           </div>
