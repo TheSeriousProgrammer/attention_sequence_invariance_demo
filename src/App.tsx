@@ -109,6 +109,7 @@ const AttentionVisualizer = () => {
               </div>
             ))}
           </div>
+          <br />
           <div className="flex justify-center mt-4">
             <button
               onClick={shuffleSequence}
