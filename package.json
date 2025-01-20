@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Attention matrix visualizer",
   "scripts": {
-    "start": "parcel src/visualizer.tsx",
-    "build": "parcel build src/visualizer.tsx"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "dependencies": {
     "lucide-react": "^0.309.0",
