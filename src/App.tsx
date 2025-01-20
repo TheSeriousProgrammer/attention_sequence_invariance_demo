@@ -64,7 +64,8 @@ const AttentionVisualizer = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-4 md:p-6 border rounded-lg shadow-sm flex flex-col items-center">
+    <div className="w-full max-w-3xl mx-auto p-6 md:p-8 border rounded-lg shadow-md flex flex-col items-center">
+      <h1 className="text-3xl font-bold mb-8 text-center">Attention Visualizer</h1>
       <div className="text-center mb-6">
         <h2 className="text-xl font-bold mb-4">Value Matrix with Positional Bias</h2>
       </div>
@@ -80,7 +81,7 @@ const AttentionVisualizer = () => {
                   type="number"
                   value={values[token]}
                   onChange={(e) => handleValueChange(token, e.target.value)}
-                  className="w-full px-3 py-2 border rounded text-center"
+                  className="w-full px-4 py-2 border rounded text-center focus:ring focus:ring-blue-200"
                 />
               </div>
             ))}
@@ -125,10 +126,10 @@ const AttentionVisualizer = () => {
             Value Matrix {usePositionalBias ? '(with Positional Bias)' : '(Direct Multiplication)'}
           </h3>
           <div className="flex justify-center overflow-x-auto">
-            <table className="table-auto border-collapse">
+            <table className="table-auto border-collapse border">
               <thead>
                 <tr>
-                  <th className="w-12"></th>
+                  <th className="w-12 border"></th>
                   {reorderedTokens.map((token, idx) => (
                     <th key={idx} className="w-16 h-12 border text-center">
                       {token}({values[token]})
@@ -145,10 +146,10 @@ const AttentionVisualizer = () => {
                     {row.map((value, j) => (
                       <td
                         key={j}
-                        className="w-16 h-12 border text-center"
+                        className="w-16 h-12 border text-center p-1"
                         style={{ backgroundColor: getColor(value) }}
                       >
-                        {value.toFixed(3)}
+                        {value.toFixed(2)}
                       </td>
                     ))}
                   </tr>
@@ -159,7 +160,7 @@ const AttentionVisualizer = () => {
         </div>
 
         {/* Legend */}
-        <div className="mt-4 text-center">
+        <div className="mt-8 p-4 border rounded-lg text-center">
           <h3 className="text-lg font-semibold mb-2">Observation</h3>
           <p className="text-sm text-gray-600">
             Without positional bias, token order affects matrix organization but not values.
