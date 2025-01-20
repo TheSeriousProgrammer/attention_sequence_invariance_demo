@@ -5,8 +5,10 @@
   "homepage": ".",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --dist-dir dist"
+    "build": "parcel build src/index.html --dist-dir dist",
+    "deploy": "npm run build && gh-pages -d dist"
   },
+  "homepage": ".",
   "dependencies": {
     "lucide-react": "^0.309.0",
     "react": "^18.2.0",
