@@ -8,7 +8,6 @@
     "build": "parcel build src/index.html --dist-dir dist",
     "deploy": "npm run build && gh-pages -d dist"
   },
-  "homepage": ".",
   "dependencies": {
     "lucide-react": "^0.309.0",
     "react": "^18.2.0",
@@ -17,6 +16,7 @@
   "devDependencies": {
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
+    "gh-pages": "^6.3.0",
     "parcel": "^2.11.0",
     "process": "^0.11.10",
     "typescript": "^5.3.3"
