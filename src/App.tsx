@@ -125,35 +125,36 @@ const AttentionVisualizer = () => {
             Value Matrix {usePositionalBias ? '(with Positional Bias)' : '(Direct Multiplication)'}
           </h3>
           <div className="flex justify-center overflow-x-auto">
-            <div className="inline-block">
-              {/* Column Headers */}
-              <div className="flex">
-                <div className="w-12"></div>
-                {reorderedTokens.map((token, idx) => (
-                  <div key={idx} className="w-16 h-12 flex items-center justify-center">
-                    {token}({values[token]})
-                  </div>
-                ))}
-              </div>
-              
-              {/* Row Headers and Matrix */}
-              {attentionMatrix.map((row, i) => (
-                <div key={i} className="flex">
-                  <div className="w-12 h-12 flex items-center justify-center">
-                    {reorderedTokens[i]}
-                  </div>
-                  {row.map((value, j) => (
-                    <div
-                      key={j}
-                      className="w-16 h-12 flex items-center justify-center border"
-                      style={{ backgroundColor: getColor(value) }}
-                    >
-                      {value.toFixed(3)}
-                    </div>
+            <table className="table-auto border-collapse">
+              <thead>
+                <tr>
+                  <th className="w-12"></th>
+                  {reorderedTokens.map((token, idx) => (
+                    <th key={idx} className="w-16 h-12 border text-center">
+                      {token}({values[token]})
+                    </th>
                   ))}
-                </div>
-              ))}
-            </div>
+                </tr>
+              </thead>
+              <tbody>
+                {attentionMatrix.map((row, i) => (
+                  <tr key={i}>
+                    <td className="w-12 h-12 border text-center">
+                      {reorderedTokens[i]}
+                    </td>
+                    {row.map((value, j) => (
+                      <td
+                        key={j}
+                        className="w-16 h-12 border text-center"
+                        style={{ backgroundColor: getColor(value) }}
+                      >
+                        {value.toFixed(3)}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 
