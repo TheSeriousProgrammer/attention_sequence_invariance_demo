@@ -64,7 +64,7 @@ const AttentionVisualizer = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-4 md:p-6 border rounded-lg shadow-sm">
+    <div className="w-full max-w-2xl mx-auto p-4 md:p-6 border rounded-lg shadow-sm flex flex-col items-center">
       <div className="text-center mb-6">
         <h2 className="text-xl font-bold mb-4">Value Matrix with Positional Bias</h2>
       </div>
