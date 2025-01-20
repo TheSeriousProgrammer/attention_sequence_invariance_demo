@@ -2,9 +2,10 @@
   "name": "attention-visualizer",
   "version": "1.0.0",
   "description": "Attention matrix visualizer",
+  "homepage": ".",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html --dist-dir dist"
   },
   "dependencies": {
     "lucide-react": "^0.309.0",
